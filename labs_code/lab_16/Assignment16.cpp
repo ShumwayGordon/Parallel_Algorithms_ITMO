@@ -1,4 +1,3 @@
-/*
 #include "mpi.h"
 #include <stdio.h>
 
@@ -29,4 +28,3 @@ int main(int argc, char **argv)
 	MPI_Comm_free(&comm_revs);
 	MPI_Finalize();
 }
-*/
