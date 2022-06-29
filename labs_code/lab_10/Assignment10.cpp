@@ -1,4 +1,3 @@
-/*
 #include <iostream>
 #include "mpi.h"
 int main(int argc, char **argv)
@@ -20,12 +19,8 @@ int main(int argc, char **argv)
 	MPI_Isend(&rank, 1, MPI_INT, next, 5, MPI_COMM_WORLD, &reqs[3]);
 	MPI_Waitall(4, reqs, stats);
 	
-	//Your code here.
-	//Here you need to display the number of the current process, and what it receives from the previous and next processes.
-	
 	printf("Rank = %d\nMessage from previous = %d\nMessage from next = %d\n\n", 
 		   rank,buf[0], buf[1]);
 
 	MPI_Finalize();
 }
-*/
