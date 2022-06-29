@@ -1,4 +1,3 @@
-/*
 #include <iostream>
 #include "mpi.h"
 #define NTIMES 100
@@ -18,4 +17,3 @@ int main(int argc, char **argv)
 	cout << "processor " << name << ", process " << rank << "time = " << (time_finish - time_start) / NTIMES << endl;
 	MPI_Finalize();
 }
-*/
