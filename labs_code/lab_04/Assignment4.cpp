@@ -1,4 +1,3 @@
-/*
 #include <iostream>
 #include <stdlib.h>
 #include "mpi.h"
@@ -31,7 +30,6 @@ int main(int argc, char* argv[]) {
 			printf("Sequence is strictly ascending\n");
 		else
 			printf("Sequence is NOT strictly ascending\n");
-		
 
 	}
 	else MPI_Send(&rank, 1, MPI_INT, 0, 0, MPI_COMM_WORLD);
@@ -39,4 +37,3 @@ int main(int argc, char* argv[]) {
 	MPI_Finalize();
 	return 0;
 }
-*/
