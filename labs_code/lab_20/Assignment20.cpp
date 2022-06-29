@@ -1,4 +1,3 @@
-/*
 #include <stdio.h>
 #include <iostream>
 #include "mpi.h"
@@ -28,10 +27,6 @@ int main(int argc, char **argv)
 		MPI_File_read(fh, buf, BUFSIZE, MPI_CHAR, &status);
 		MPI_Get_count(&status, MPI_CHAR, &num);
 		printf("buf=%s\n", buf);
-		//printf("buf= ");
-		//for (int i = 0; i < 12; i++)
-		//	printf("%c", buf[i]);
-		//printf("\n");
 		sum += num;
 	} while (num >= BUFSIZE);
 	MPI_File_close(&fh);
@@ -43,4 +38,3 @@ int main(int argc, char **argv)
 
 	MPI_Finalize();
 }
-*/
