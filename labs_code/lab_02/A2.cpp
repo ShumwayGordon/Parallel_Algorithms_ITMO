@@ -10,11 +10,8 @@ void generate_matrix( uint **array, uint n )
 		for (uint j = 0; j < n; j++)
 		{
 			array[i][j] = rand() % 100;
-			//printf("%d ", array[i][j]);
 		}
-		//printf("\n");
 	}
-	//printf("\n");
 }
 
 
@@ -29,13 +26,10 @@ double matrix_mult_serial( uint **a, uint**b, uint **c, uint n )
 			{
 				c[i][j] += a[i][k] * b[k][j];
 			}
-			//printf("%d ", c[i][j]);
 		}
-		//printf("\n");
 	}
 	double en = omp_get_wtime();
 	printf("Execution time Serial: %lf\n", en - st);
-
 	return(en - st);
 }
 
@@ -49,15 +43,9 @@ double matrix_mult_parallel1( uint** a, uint** b, uint** d, uint n, int threads_
 			for (j = 0; j < n; j++)
 				for (k = 0; k < n; k++)
 					d[i][j] += a[i][k] * b[k][j];
-	/*
-	for (uint i = 0; i < n; i++)
-	{   for (uint j = 0; j < n; j++)
-			printf("%i ", d[i][j]);
-		printf("\n");	}
-	*/
+	
 	double en = omp_get_wtime();
 	printf("Execution time Parallel_1 = %lf s\n", en - st);
-
 	return (en - st);
 }
 
@@ -71,17 +59,9 @@ double matrix_mult_parallel2( uint **a, uint **b, uint **d, uint n, int threads_
 			for (k = 0; k < n; k++)
 				for (j = 0; j < n; j++)
 					d[i][j] += a[i][k] * b[k][j];
-	/*
-	for (uint i = 0; i < n; i++)
-	{
-		for (uint j = 0; j < n; j++)
-			printf("%i ", d[i][j]);
-		printf("\n");
-	}
-	*/
+
 	double en = omp_get_wtime();
 	printf("Execution time Parallel_2 = %lf s\n", en - st);
-
 	return(en - st);
 }
 
