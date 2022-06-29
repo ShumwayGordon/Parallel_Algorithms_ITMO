@@ -52,8 +52,6 @@ int main(int argc, char* argv[])
             thread_maxes[thread_num] = v[n];
             thread_max_ids[thread_num] = n;
         }
-
-        //printf("thread id = %d, i = %d,  %lf\n", omp_get_thread_num(), n, thread_maxes[thread_num]);
     }
 
     std::vector<double>::iterator max = std::max_element(thread_maxes.begin(), thread_maxes.end());
@@ -63,14 +61,9 @@ int main(int argc, char* argv[])
     clock_t end = clock();
     double elapsed = double(end - start) / CLOCKS_PER_SEC;
 
-
-    //for (int i = 0; i < N; i++)
-    //    std::cout << v[i] << ' ';
-
-    //printf("\nmax value = %lf\n", max_val);
-
     printf("Number of threads = %d\n", threads_num);
 
     printf("Execution time: %f ms\n", elapsed*1000);
-
+    
+    return 0;
 }
